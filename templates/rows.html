@@ -27,7 +27,7 @@
 
     <td class='cell-border'>
       <span style='{% if row.is_error %}background-color:#ffaaaa;{% endif %}'>
-      <a href='#' 
+      <a href='#'
          onclick='details({{deployment_id}}, "routing_key", {{row.id}});'>
          {{row.routing_key}}</a>
       </span>
@@ -35,11 +35,11 @@
 
     <td class='cell-border'>
       <a href='#' onclick='details({{deployment_id}}, "tenant", {{row.id}});'>
-      {% if row.tenant %}{{row.tenant}}{% endif %}</a>
+      {% if row.tenant_name %}{{row.tenant_name}}{% endif %}</a>
     </td>
 
     <td class='cell-border'>
-        <a href='#' 
+        <a href='#'
             onclick='details({{deployment_id}}, "service", {{row.id}});'>
             {{row.service}}</a>
     </td>
@@ -57,7 +57,7 @@
 
     <td class='cell-border'>
         {% if row.instance %}
-        <a href='#' 
+        <a href='#'
             onclick='details({{deployment_id}}, "instance", {{row.id}});'>
             {{row.instance}}</a>
         {% endif %}

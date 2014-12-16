@@ -5,9 +5,9 @@
 # to you under the Apache License, Version 2.0 (the
 # "License"); you may not use this file except in compliance
 # with the License.  You may obtain a copy of the License at
-# 
+#
 #   http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an
 # "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -404,6 +404,10 @@ def _post_process_raw_data(rows, highlight=None):
             row.highlight = True
         row.fwhen = dt.dt_from_decimal(row.when)
         row.deployment = dep_dict[row.deployment_id]
+
+        # jt
+        x = json.loads(row.json)
+        row.tenant_name = x[1]['_context_project_name']
 
 
 def _default_context(request, deployment_id=0):
